@@ -1,4 +1,6 @@
-function duplicateCheck(arr) {
+const Benchmark = require('benchmark');
+
+function nestedLoopDuplicateCheck(arr) {
   // create variable for most appearing value
   let mostValue = 0;
 
@@ -31,7 +33,18 @@ function duplicateCheck(arr) {
   return `${mostValue} appeared ${mostCount} times.`;
 }
 
+const numbers = [];
+for (let i = 0; i < 40000; i++) {
+  numbers.push(Math.floor(Math.random() * 10000) + 1);
+}
 
-const numbers = [41, 24, 28, 1, 40, 41, 32, 33, 50, 5, 34, 5, 21, 21, 43, 43, 21, 4, 49, 24];
+const suite = new Benchmark.Suite;
 
-console.log(duplicateCheck(numbers));
+suite
+  .add('duplicates test', function() {
+    nestedLoopDuplicateCheck(numbers);
+  })
+  .on('complete', function() {
+    this.forEach(result => console.log(`${result.name} averaged ${result.stats.mean * 1000} milliseconds`));
+  })
+  .run();

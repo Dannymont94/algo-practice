@@ -1,0 +1,23 @@
+{
+  "name": "algo-practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "duplicateCheck.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dannymont94/algo-practice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dannymont94/algo-practice/issues"
+  },
+  "homepage": "https://github.com/Dannymont94/algo-practice#readme",
+  "dependencies": {
+    "benchmark": "^2.1.4"
+  }
+}
